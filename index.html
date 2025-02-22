@@ -1,17 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>European Fandom Fund</title>
-    <meta name="description" content="European Fandom Fund" />
-    <meta name="author" content="EFFund" />
-    <meta property="og:image" content="./og-image.png" />
-  </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Competition 2024</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Innovation Competition 2024" />
+    <meta name="author" content="Competition 2024" />
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <span class="logo">Competition 2024</span>
+            <nav class="desktop-nav">
+                <a href="#about">About</a>
+                <a href="#timeline">Timeline</a>
+                <a href="#register">Register</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <button class="mobile-menu-button" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <a href="#about">About</a>
+            <a href="#timeline">Timeline</a>
+            <a href="#register">Register</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-  <body>
-    <div id="root"></div>
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="./src/main.tsx"></script>
-  </body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="grid-background"></div>
+        <div class="hero-content">
+            <span class="badge">Registration Now Open</span>
+            <h1>
+                <span>Innovation Competition</span>
+                <span class="year">2024</span>
+            </h1>
+            <p>Join the most prestigious competition of the year. Showcase your talent, connect with industry leaders, and win amazing prizes.</p>
+            <div class="hero-buttons">
+                <a href="#register" class="button primary">Register Now</a>
+                <a href="#about" class="button secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="timeline">
+        <div class="container">
+            <h2>Important Dates</h2>
+            <p class="section-desc">Mark your calendar for these key milestones</p>
+            <div class="timeline-grid">
+                <!-- Timeline items will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section id="about" class="content">
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-text">
+                    <h2>About the Competition</h2>
+                    <p>Our annual innovation competition brings together the brightest minds to solve real-world challenges. With a focus on technology and sustainability, participants will have the opportunity to showcase their ideas to industry leaders.</p>
+                    <p>Whether you're a student, professional, or enthusiast, this competition offers a platform to turn your innovative ideas into reality.</p>
+                </div>
+                <div class="content-image">
+                    <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" alt="Innovation at work">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="register" class="register">
+        <div class="container">
+            <h2>Register Now</h2>
+            <p class="section-desc">Complete the registration form and process the payment</p>
+            <div class="register-grid">
+                <div class="form-container">
+                    <h3>Registration Form</h3>
+                    <iframe src="YOUR_GOOGLE_FORM_URL" width="100%" height="600" frameborder="0"></iframe>
+                </div>
+                <div class="payment-container">
+                    <h3>Payment</h3>
+                    <iframe src="YOUR_PAYPAL_BUTTON_URL" width="100%" height="600" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Competition 2024</h3>
+                    <p>Join us in celebrating innovation and creativity. Together, we can shape the future.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#timeline">Timeline</a></li>
+                        <li><a href="#register">Register</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>
+                        Email: contact@competition2024.com<br>
+                        Phone: (555) 123-4567<br>
+                        Address: 123 Innovation Street<br>
+                        Tech City, TC 12345
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Competition. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
