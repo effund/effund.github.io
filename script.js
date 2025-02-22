@@ -28,7 +28,7 @@ const timelineData = [
     {
         date: "February 24, 2025",
         title: "Nominations Open",
-        description: "Nominate yourself or a fellow fan for the Fund. Don't forget that every nomination requires a donation."
+        description: "Nominate yourself for the Fund. Don't forget that every nomination requires a donation."
     },
     {
         date: "March 22, 2025",
@@ -38,7 +38,7 @@ const timelineData = [
     {
         date: "March 25, 2025",
         title: "Voting Opens",
-        description: "Vote for your preferred nominee for the Fund. You will be able to read their presentation."
+        description: "Vote for your preferred applicant for the Fund. You will be able to read their presentation."
     },
     {
         date: "May 5, 2025",
@@ -47,7 +47,7 @@ const timelineData = [
     },
     {
         date: "June 26, 2025",
-        title: "Archipelacon/Eurocon 2025 begins in Aland, Finland",
+        title: "Archipelacon/Eurocon 2025 begins in Åland, Finland",
         description: "The EFF nominee "
     }
 ];
@@ -58,7 +58,7 @@ const timelineGrid = document.querySelector('.timeline-grid');
 timelineData.forEach((item, index) => {
     const timelineItem = document.createElement('div');
     timelineItem.className = 'timeline-item';
-    timelineItem.style.marginLeft = index % 2 === 0 ? '0' : '50%';
+    timelineItem.style.marginLeft = index % 2 === 0 ? '-10px' : 'calc(50% + 10px)';
 
     timelineItem.innerHTML = `
         <div class="timeline-content">

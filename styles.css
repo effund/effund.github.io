@@ -246,10 +246,11 @@ body {
 }
 
 .timeline-item {
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.8s, transform 0.8s;
+    max-width: 400px;
 }
 
 .timeline-item.visible {
