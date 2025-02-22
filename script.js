@@ -26,24 +26,29 @@ mobileNav.querySelectorAll('a').forEach(link => {
 // Timeline data
 const timelineData = [
     {
-        date: "April 1, 2024",
-        title: "Registration Opens",
-        description: "Early bird registration begins"
+        date: "February 24, 2025",
+        title: "Nominations Open",
+        description: "Nominate yourself or a fellow fan for the Fund. Don't forget that every nomination requires a donation."
     },
     {
-        date: "May 15, 2024",
-        title: "Submission Deadline",
-        description: "All projects must be submitted by 11:59 PM EST"
+        date: "March 22, 2025",
+        title: "Nominations Closed",
+        description: "Make sure to have submitted your nomination by end of day Monday after Easter."
     },
     {
-        date: "June 1, 2024",
-        title: "Finalists Announced",
-        description: "Top 10 projects will be selected"
+        date: "March 25, 2025",
+        title: "Voting Opens",
+        description: "Vote for your preferred nominee for the Fund. You will be able to read their presentation."
     },
     {
-        date: "June 15, 2024",
-        title: "Final Event",
-        description: "Live presentations and winner announcement"
+        date: "May 5, 2025",
+        title: "European Fandom Fund Results Announced",
+        description: "Voting closes and winner is announced on the website and in groups."
+    },
+    {
+        date: "June 26, 2025",
+        title: "Archipelacon/Eurocon 2025 begins in Aland, Finland",
+        description: "The EFF nominee "
     }
 ];
 
@@ -54,7 +59,7 @@ timelineData.forEach((item, index) => {
     const timelineItem = document.createElement('div');
     timelineItem.className = 'timeline-item';
     timelineItem.style.marginLeft = index % 2 === 0 ? '0' : '50%';
-    
+
     timelineItem.innerHTML = `
         <div class="timeline-content">
             <span class="date">${item.date}</span>
@@ -62,7 +67,7 @@ timelineData.forEach((item, index) => {
             <p>${item.description}</p>
         </div>
     `;
-    
+
     timelineGrid.appendChild(timelineItem);
 });
 
