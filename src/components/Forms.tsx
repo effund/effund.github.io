@@ -29,7 +29,23 @@ export const Forms = () => {
           <div className="bg-white p-6 rounded-lg shadow-sm">
             <h3 className="text-xl font-semibold mb-4">Payment</h3>
             <div className="aspect-video">
-              <iframe
+            <div id="donate-button-container">
+              <div id="donate-button"></div>
+              <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+              <script lang="js">
+                PayPal.Donation.Button({
+                  env:'production',
+                  hosted_button_id:'627KTSATX9AZC',
+                  image: {
+                    src:'https://pics.paypal.com/00/s/NDQ3Zjc4MjktYTU1YS00NmNlLTg4MjUtOWNkMWZmN2E3ZjZl/file.PNG',
+                    alt:'Donate with PayPal button',
+                    title:'PayPal - The safer, easier way to pay online!',
+                  }
+                }).render('#donate-button');
+              </script>
+            </div>
+
+              {/*<iframe
                 src="YOUR_PAYPAL_BUTTON_URL"
                 width="100%"
                 height="600"
@@ -37,7 +53,7 @@ export const Forms = () => {
                 className="rounded-lg"
               >
                 Loading...
-              </iframe>
+              </iframe>*/}
             </div>
           </div>
         </div>
