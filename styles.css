@@ -290,7 +290,7 @@ section:nth-of-type(even) {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.timeline-item.active, .timeline-item.active .timeline-content {
+.timeline-item.active .timeline-content {
     background-color: #4d7180;
     color: #dbe0e5;
 }
