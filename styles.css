@@ -290,7 +290,7 @@ section:nth-of-type(even) {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.timeline-item.active .timeline-content.active {
+.timeline-item.active, .timeline-item.active .timeline-content {
     background-color: #4d7180;
     color: #dbe0e5;
 }
@@ -339,8 +339,9 @@ section:nth-of-type(even) {
 
 .form-container,
 .payment-container {
-    background-color: white;
+    background-color: #ffffff99;
     padding: 1.5rem;
+    margin: 1rem auto;
     border-radius: 0.5rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
@@ -396,7 +397,7 @@ section:nth-of-type(even) {
 
 @media (min-width: 768px) {
     .footer-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
