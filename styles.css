@@ -18,6 +18,12 @@ body {
     padding: 0 1rem;
 }
 
+a {
+    color: #7171c1;
+    text-decoration-style: dashed;
+    font-weight: bold;
+}
+
 /* Header styles */
 .header {
     position: fixed;
@@ -43,6 +49,7 @@ body {
 }
 
 .logo {
+    font-family: 'Orbitron', Arial, sans-serif;
     font-size: 1.25rem;
     font-weight: 600;
 }
@@ -117,7 +124,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 2rem;
-    background: linear-gradient(to bottom, #f9fafb, #ffffff);
+    background: linear-gradient(to bottom, #f9fafb4f, #a8dbf4cf);
     overflow: hidden;
 }
 
@@ -211,11 +218,15 @@ body {
 
 section {
     padding: 3rem 0;
-    background-color: #b7d0e991;
+    background-color: #b7d0e9d9;
     width: 90%;
     text-align: center;
     margin: 1rem auto;
     border-radius: 20px;
+}
+
+section:nth-of-type(even) {
+    background-color: #e2e7eded;
 }
 
 /* Timeline section */
@@ -277,6 +288,11 @@ section {
     padding: 1.5rem;
     border-radius: 0.5rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-item.active .timeline-content.active {
+    background-color: #4d7180;
+    color: #dbe0e5;
 }
 
 /* Content section */
@@ -360,7 +376,7 @@ section {
     margin-bottom: 1rem;
     color: #1a1a1a;
 }
-.faq-item p, ul {
+.faq-item p, .faq-item ul {
     color: #6b7280;
     line-height: 1.6;
 }

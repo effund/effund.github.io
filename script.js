@@ -26,8 +26,9 @@ mobileNav.querySelectorAll('a').forEach(link => {
 // Timeline data
 const timelineData = [
     {
-        date: "February 24, 2025",
+        date: "February 26, 2025",
         title: "Nominations Open",
+        active: true,
         description: "Nominate yourself for the Fund. Don't forget that every nomination requires a donation."
     },
     {
@@ -57,7 +58,7 @@ const timelineGrid = document.querySelector('.timeline-grid');
 
 timelineData.forEach((item, index) => {
     const timelineItem = document.createElement('div');
-    timelineItem.className = 'timeline-item';
+    timelineItem.className = item.active ? 'timeline-item active' : 'timeline-item';
     timelineItem.style.marginLeft = index % 2 === 0 ? '-10px' : 'calc(50% + 10px)';
 
     timelineItem.innerHTML = `
