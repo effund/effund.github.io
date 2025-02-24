@@ -1,7 +1,7 @@
 /* Reset and base styles */
 * {
-    margin: 0;
-    padding: 0;
+/*    margin: 0;*/
+/*    padding: 0;*/
     box-sizing: border-box;
 }
 
@@ -9,6 +9,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     color: #1a1a1a;
+    background: url(bg.jpg) repeat-x repeat-y;
 }
 
 .container {
@@ -209,13 +210,15 @@ body {
 
 /* Timeline section */
 .timeline {
-    padding: 5rem 0;
+    padding: 3rem 0;
     background-color: #f9fafb;
 }
 
 .timeline h2,
 .content h2,
-.register h2 {
+.register h2,
+.faq h2
+.eurocon h2 {
     font-size: 1.875rem;
     font-weight: 700;
     text-align: center;
@@ -267,7 +270,7 @@ body {
 
 /* Content section */
 .content {
-    padding: 5rem 0;
+    padding: 3rem 0;
 }
 
 .content-grid {
@@ -291,7 +294,7 @@ body {
 
 /* Register section */
 .register {
-    padding: 5rem 0;
+    padding: 3rem 0;
     background-color: #f9fafb;
 }
 
@@ -317,7 +320,7 @@ body {
 
 /* FAQ Section */
 .faq {
-    padding: 5rem 0;
+    padding: 3rem 0;
     background-color: white;
 }
 .faq-grid {
@@ -346,7 +349,7 @@ body {
     margin-bottom: 1rem;
     color: #1a1a1a;
 }
-.faq-item p {
+.faq-item p, ul {
     color: #6b7280;
     line-height: 1.6;
 }

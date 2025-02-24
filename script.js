@@ -41,8 +41,8 @@ const timelineData = [
         description: "Vote for your preferred applicant for the Fund. You will be able to read their presentation."
     },
     {
-        date: "May 5, 2025",
-        title: "European Fandom Fund Results Announced",
+        date: "April 25, 2025",
+        title: "European Fan Fund Results Announced",
         description: "Voting closes and winner is announced on the website and in groups."
     },
     {
