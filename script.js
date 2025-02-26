@@ -26,7 +26,7 @@ mobileNav.querySelectorAll('a').forEach(link => {
 // Timeline data
 const timelineData = [
     {
-        date: "February 26, 2025",
+        date: "February 27, 2025",
         title: "Nominations Open",
         active: true,
         description: "Nominate yourself for the Fund. Don't forget that every nomination requires a donation."
@@ -43,7 +43,7 @@ const timelineData = [
     },
     {
         date: "April 25, 2025",
-        title: "European Fan Fund Results Announced",
+        title: "Voting closed at end of day",
         description: "Voting closes and winner is announced on the website and in groups."
     },
     {
