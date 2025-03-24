@@ -29,15 +29,15 @@ const timelineData = [
         date: "February 27, 2025",
         title: "Nominations Open",
         active: true,
-        description: "Nominate yourself for the Fund. Don't forget that every nomination requires a donation."
+        description: "Apply for the Fund. Don't forget that every nomination requires a donation."
     },
     {
-        date: "March 22, 2025",
+        date: "March 30, 2025",
         title: "Nominations Closed",
-        description: "Make sure to have submitted your nomination by end of day Monday after Easter."
+        description: "Make sure to have submitted your nomination by end of day on March 30, Sunday."
     },
     {
-        date: "March 25, 2025",
+        date: "April 1, 2025",
         title: "Voting Opens",
         description: "Vote for your preferred applicant for the Fund. You will be able to read their presentation."
     },
