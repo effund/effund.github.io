@@ -26,7 +26,8 @@ a {
 
 a[disabled] {
     pointer-events: none;
-    background-color: gray;
+    color: gray !important;
+    background-color: #80808070 !important;
 }
 
 /* Header styles */
