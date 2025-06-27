@@ -325,6 +325,10 @@ section:nth-of-type(even) {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+#news img {
+    max-width: 300px;
+}
+
 /* Register section */
 .register {
     padding: 3rem 0;
