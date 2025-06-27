@@ -24,6 +24,11 @@ a {
     font-weight: bold;
 }
 
+a[disabled] {
+    pointer-events: none;
+    background-color: gray;
+}
+
 /* Header styles */
 .header {
     position: fixed;
