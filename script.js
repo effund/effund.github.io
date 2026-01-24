@@ -26,30 +26,30 @@ mobileNav.querySelectorAll('a').forEach(link => {
 // Timeline data
 const timelineData = [
     {
-        date: "February 27, 2025",
-        title: "Nominations Open",
+        date: "January 26, 2026",
+        title: "Applications Open",
         active: true,
         description: "Apply for the Fund. Don't forget that every nomination requires a donation."
     },
     {
-        date: "March 30, 2025",
-        title: "Nominations Closed",
-        description: "Make sure to have submitted your nomination by end of day on March 30, Sunday."
+        date: "March 15, 2026",
+        title: "Applications Closed",
+        description: "Make sure to have submitted your nomination by end of day on March 15, Sunday."
     },
     {
-        date: "April 1, 2025",
+        date: "March 23, 2026",
         title: "Voting Opens",
         description: "Vote for your preferred applicant for the Fund. You will be able to read their presentation."
     },
     {
-        date: "April 25, 2025",
+        date: "April 30, 2026",
         title: "Voting closed at end of day",
-        description: "Voting closes and winner is announced on the website and in groups."
+        description: "Voting closes and winner is shortly announced on the website and in groups."
     },
     {
-        date: "June 26, 2025",
-        title: "Archipelacon/Eurocon 2025 begins in Åland, Finland",
-        description: "The EFF nominee "
+        date: "July 2, 2026",
+        title: "Metropolcon/Eurocon 2026 begins in Berlin, Germany",
+        description: "The EFF delegate "
     }
 ];
 
