@@ -235,6 +235,10 @@ section:nth-of-type(even) {
     background-color: #e2e7eded;
 }
 
+section ul {
+    text-align: left;
+}
+
 /* Timeline section */
 /*.timeline {
     padding: 3rem 0;
