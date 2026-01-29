@@ -26,7 +26,7 @@ mobileNav.querySelectorAll('a').forEach(link => {
 // Timeline data
 const timelineData = [
     {
-        date: "January 26, 2026",
+        date: "January 30, 2026",
         title: "Applications Open",
         active: true,
         description: "Apply for the Fund. Don't forget that every nomination requires a donation."
