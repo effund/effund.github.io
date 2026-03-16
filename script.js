@@ -32,12 +32,12 @@ const timelineData = [
         description: "Apply for the Fund. Don't forget that every nomination requires a donation."
     },
     {
-        date: "March 15, 2026",
+        date: "March 29, 2026",
         title: "Applications Closed",
-        description: "Make sure to have submitted your nomination by end of day on March 15, Sunday."
+        description: "Make sure to have submitted your nomination by end of day on March 29, Sunday."
     },
     {
-        date: "March 23, 2026",
+        date: "April 1, 2026",
         title: "Voting Opens",
         description: "Vote for your preferred applicant for the Fund. You will be able to read their presentation."
     },
