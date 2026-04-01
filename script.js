@@ -37,7 +37,7 @@ const timelineData = [
         description: "Make sure to have submitted your nomination by end of day on March 29, Sunday."
     },
     {
-        date: "April 1, 2026",
+        date: "April 2, 2026",
         title: "Voting Opens",
         description: "Vote for your preferred applicant for the Fund. You will be able to read their presentation."
     },
