@@ -117,23 +117,23 @@ function enableVoting() {
 
 window.onload = function () {
 
-  if (localStorage.getItem('canVote') === 'true') {
-    enableVoting();
-    transactionId = localStorage.getItem('tx');
-  }
+  // if (localStorage.getItem('canVote') === 'true') {
+  //   enableVoting();
+  //   transactionId = localStorage.getItem('tx');
+  // }
 
-  if (localStorage.getItem('voted') === 'true') {
-    document.getElementById('cards').innerHTML =
-      "<h3 class='success'>✅ You already voted</h2>";
-  } else {
-    const params = new URLSearchParams(window.location.search);
-    const tx = params.get('tx');
-    const status = params.get('st');
+  // if (localStorage.getItem('voted') === 'true') {
+  //   document.getElementById('cards').innerHTML =
+  //     "<h3 class='success'>✅ You already voted</h2>";
+  // } else {
+  //   const params = new URLSearchParams(window.location.search);
+  //   const tx = params.get('tx');
+  //   const status = params.get('st');
 
-    if (tx && status === "Completed") {
-        donationDone({id: tx, amount: params.get('amt'), currency: params.get('cc')}, "return");
-    }
-  }
+  //   if (tx && status === "Completed") {
+  //       donationDone({id: tx, amount: params.get('amt'), currency: params.get('cc')}, "return");
+  //   }
+  // }
 };
 
 function donationDone(details, src) {
@@ -151,21 +151,21 @@ function donationDone(details, src) {
         "✅ Payment successful! You can now vote.";
 }
 
-PayPal.Donation.Button({
-    env:'production',
-    hosted_button_id:'Y5RTH8TVW6JVG',
-    image: {
-        src:'button-nobg.png',
-        width: '150px',
-        alt:'Donate with PayPal button',
-        title:'Support the EFF and cast your vote',
-    },
-    amount: "3.00",
-    currency: "EUR",
-    enable_funding: ["card", "applepay", "googlepay"],
-    onClick: function() { paymentStarted = true; },
-    onComplete: function(details) { donationDone(details, "approved"); }
-}).render('#paypal-button');
+// PayPal.Donation.Button({
+//     env:'production',
+//     hosted_button_id:'Y5RTH8TVW6JVG',
+//     image: {
+//         src:'button-nobg.png',
+//         width: '150px',
+//         alt:'Donate with PayPal button',
+//         title:'Support the EFF and cast your vote',
+//     },
+//     amount: "3.00",
+//     currency: "EUR",
+//     enable_funding: ["card", "applepay", "googlepay"],
+//     onClick: function() { paymentStarted = true; },
+//     onComplete: function(details) { donationDone(details, "approved"); }
+// }).render('#paypal-button');
 
 // paypal.Buttons({
 
