@@ -164,7 +164,7 @@ PayPal.Donation.Button({
     currency: "EUR",
     enable_funding: ["card", "applepay", "googlepay"],
     onClick: function() { paymentStarted = true; },
-    onApprove: function(details) { donationDone(details, "approved"); }
+    onComplete: function(details) { donationDone(details, "approved"); }
 }).render('#paypal-button');
 
 // paypal.Buttons({
