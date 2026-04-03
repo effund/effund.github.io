@@ -28,7 +28,6 @@ const timelineData = [
     {
         date: "January 30, 2026",
         title: "Applications Open",
-        active: true,
         description: "Apply for the Fund. Don't forget that every nomination requires a donation."
     },
     {
@@ -39,6 +38,7 @@ const timelineData = [
     {
         date: "April 2, 2026",
         title: "Voting Opens",
+        active: true,
         description: "Vote for your preferred applicant for the Fund. You will be able to read their presentation."
     },
     {
@@ -137,9 +137,9 @@ window.onload = function () {
 };
 
 function donationDone(details, src) {
-    transactionId = details.id;
-      currencyCode = details.currency;
-      amount = details.amount;
+    transactionId = details.tx;
+      currencyCode = details.cc;
+      amount = details.amt;
       email = details.email || "unknown";
 
       localStorage.setItem('canVote', 'true');
