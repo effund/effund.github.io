@@ -110,6 +110,9 @@ async function hash(input) {
 function enableVoting() {
   document.getElementById('candidate-1').classList.remove('disabled');
   document.getElementById('candidate-2').classList.remove('disabled');
+  document.getElementById('candidate-3').classList.remove('disabled');
+  document.getElementById('candidate-4').classList.remove('disabled');
+  document.getElementById('candidate-5').classList.remove('disabled');
 }
 
 window.onload = function () {
