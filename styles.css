@@ -360,6 +360,104 @@ section ul {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
+/* Vote Section */
+
+  .vote h2 {
+    margin-top: 40px;
+    font-size: 1.5rem;
+  }
+
+  .vote .container {
+    max-width: 90%;
+    margin: auto;
+    padding: 20px;
+  }
+
+  .paypal-box {
+    margin: 30px 0;
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+  }
+
+  .cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .card {
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card:nth-of-type(even) {
+    border: 1px solid #4caf50;
+  }
+
+  .card:nth-of-type(odd) {
+    border: 1px solid #2196f3;
+  }
+
+  .card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  }
+
+  .card.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  /*.card img {
+    width: 100%;
+    border-radius: 10px;
+  }*/
+
+  .card h3 {
+    margin: 10px 0;
+  }
+
+  .vote-btn {
+    margin-top: 15px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    background: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  .vote-btn:hover {
+    background: #45a049;
+  }
+
+  .status {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    opacity: 0.8;
+  }
+
+  .success {
+    animation: pop 0.4s ease;
+    color: #4CAF50;
+  }
+
+  @keyframes pop {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
 /* FAQ Section */
 /*.faq {
     padding: 3rem 0;

@@ -13,6 +13,7 @@
     <meta property="og:description" content="The EFF helps fellow European fans to participate in the Eurocons. Apply now for 2026!" />
     <meta property="og:url" content="https://effund.github.io/" />
     <meta property="og:image" content="efflogo.png" />
+    <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
 </head>
 <body>
     <!-- Header -->
@@ -20,6 +21,7 @@
         <div class="header-container">
             <span class="logo">European Fan Fund</span>
             <nav class="desktop-nav">
+                <!-- <a href="#vote">Vote</a> -->
                 <a href="#about">About</a>
                 <a href="#timeline">Timeline</a>
                 <!-- <a href="#register">Apply</a> -->
@@ -34,6 +36,7 @@
             </button>
         </div>
         <nav class="mobile-nav">
+            <!-- <a href="#vote">Vote</a> -->
             <a href="#about">About</a>
             <a href="#timeline">Timeline</a>
             <!-- <a href="#register">Apply</a> -->
@@ -124,11 +127,11 @@
                     <ul>
                       <li>three European nominators (who need to confirm the nomination)</li>
                       <li>a platform of no more than 300 words to appear on the ballot</li>
-                      <li>a bond of €12/£10, paid by PayPal or other means</li>
+                      <li>a bond of €12, paid by PayPal or other means</li>
                       <li>commitment to attend the 2026 Eurocon in Berlin, Germany if you win, unless in the case of extreme circumstances</li>
                     </ul>
                     <p>Among your nominators there must be at least one fan from your country and one fan from another European country.</p>
-                    <p>Nominations are open from <b>30 January 2026</b> until <b>29 March 2026</b> and candidates will be announced soon after. Voting will then run until end of day on 30 April 2026, with the delegate announced online as soon as possible after voting has closed. Voting will require voters to donate a small amount of €3/£2 or more, up to their preference, to the fund.</p>
+                    <p>Nominations are open from <b>30 January 2026</b> until <b>29 March 2026</b> and candidates will be announced soon after. Voting will then run until end of day on 30 April 2026, with the delegate announced online as soon as possible after voting has closed. Voting will require voters to donate a small amount of €3 or more, up to their preference, to the fund.</p>
                     <p>The EFF delegate will commit to participate in the fund management for the next two years and also produce a trip report to be published on this website.</p>
                     <p>If you feel unsure about how to go about getting any of these things, what the fund pays for or the duties of an EFF delegate and administrator, then feel free to <a href="#contact">contact us</a> in confidence – we’re happy to help!</p>
                 </div>
@@ -154,18 +157,123 @@
     <section id="eurocons" class="content">
         <div class="container">
             <div class="content-grid">
-                <div class="content-text">
+                <div class="content-text" style="grid-column: span 2;">
                     <h2>What is Eurocon?</h2>
 
                     <p>Eurocon is the yearly all European festival for Science Fiction and Fatnasy, held in a different country each year. It is traditionally the event that gathers fans, authors, artists, journalists from all across the continent. The convention usually offers many talks, panels, workshops, presentations and performances, roundtables, signings and interviews.</p>
                     <p>The convention is run with the support of ESFS, the European Science Fiction Society that represents the fandom of European countries. It is organized by a local team and usually builds on a local festival but adds English speaking programme. Usually, there are also exhibitions, competitions, tourist outings and other side events.</p>
                     <p>Eurocon also hosts the European Science Fiction Society Awards. All European countries can submit nominations for the Awards' many categories. For more details you can visit the <a href="https://www.esfs.info/next-current-esfs-awards/" target="_blank">ESFS website</a>.
                     <p>This year's Eurocon was voted to be in Germany. It will coincide with the local <a href="https://www.metropolcon.eu/en/" target="_blank">Metropolcon</a> in Berlin, 2-5 July 2026. The European Fan Fund is devoted to helping fellow fans attend the Eurocons in order to foster community building and exchange of ideas and good will.</p>
-                </div>
-                <div class="content-image">
-                    <img src="metropolcon.png">
+                    <img src="metropolcon.jpg" style="width: 100%;">
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Voting Section -->
+    <section id="vote" class="vote">
+        <div class="container">
+
+          <h2>🗳️ Vote for Your Candidate</h2>
+
+          <div class="paypal-box">
+            <p>
+                Help fans attend the Eurocon 💙<br/>
+                Donate €3+ to support the fund and cast your vote.<br/>
+                No PayPal account needed - pay with card, Apple Pay or Google Pay.<br />
+                Takes less than a minute!
+            </p>
+            <div id="paypal-button"></div>
+            <p style="font-size: xx-small;">
+                Secure payment via PayPal
+            </p>
+
+          </div>
+
+          <div class="status" id="status"></div>
+
+          <div class="cards" id="cards">
+            <div class="card disabled" id="candidate-1">
+              <h2>Hephaestion Demetrios Christopoulos <img src="https://flagcdn.com/w20/gr.png"></h2>
+              <img src=""/>
+              <p>I am a Greek writer, translator and editor. I would really like to represent a country that is vastly underrepresented in the European and global scene. If you'd like, I believe I could make a presentation or take part in a panel and present the strange history of SFF in Greece.</p>
+              <h4>Nominators:</h4>
+              <ul>
+                <li>Thomas Recktenwald <img src="https://flagcdn.com/w20/de.png"></li>
+                <li>Kostas Charitos <img src="https://flagcdn.com/w20/gr.png"></li>
+                <li>Britt-Louise Viklund <img src="https://flagcdn.com/w20/se.png"></li>
+              </ul>
+              <button class="vote-btn" onclick="submitVote(1)">Vote</button>
+            </div>
+
+            <div class="card disabled" id="candidate-2">
+              <h2>Marcel Gherman <img src="https://flagcdn.com/w20/md.png"></h2>
+              <p>I am a writer and journalist from Moîdova.   Two of my books of science fiction and fantasy received the Writers Union of Moldova Award for Debut on 2012 and for Best book for Children and Youth. I published many articles about European science fiction in the press including Cultural magazine Contrafort in Moldova and online magazine Gaxeta SF in Romania. I am the editor of printed cultural magazine Sud Est Cultural.</p>
+              <h4>Nominators:</h4>
+              <ul>
+                <li>Catalin Badea-Gheracostea <img src="https://flagcdn.com/w20/ro.png"></li>
+                <li>Bridget Wilkinson <img src="https://flagcdn.com/w20/gb.png"></li>
+                <li>Constantin Cheianu <img src="https://flagcdn.com/w20/md.png"></li>
+              </ul>
+              <button class="vote-btn" onclick="submitVote(2)">Vote</button>
+            </div>
+
+            <div class="card disabled" id="candidate-3">
+              <h2>Paul Carroll <img src="https://flagcdn.com/w20/ie.png"></h2>
+              <p>I am a reader and writer of SFF, typically (but not exclusively) focusing on horror and the supernatural. I write across prose fiction and comics, and helped form two creative collectives in Ireland - Cupán Fae and Limit Break Comics.<br/><br/>
+              My journey into fandom began with a web-documentary on comic book culture in Ireland, in 2015. I went from having never been to a convention to attending and filming at six in one summer. This turned into running a review website for comics, running a monthly market in Dublin and helping to organise Small Press Day, and eventually organising multiple SFF anthologies across prose and comics.<br/><br/>
+              From 2021-2024, I worked as part of Octocon, the National Irish Science Fiction Convention. I was part of the programme team for my first two years, then took on the role of Chair for 2023 and 2024. The Octocon community have been true friends, and saw me through some of the toughest parts of my adult life, during and after my time working with the convention.<br/><br/>
+              I've been a programme participant at WorldCon in Glasgow and EasterCon in Belfast, and had the joy of attending Smofcon in Lisbon in 2021. Each of those events allowed me to meet some amazing members of fandom outside of the Irish group I know, and I can't wait to repeat that sort of experience again in the future!</p>
+              <h4>Nominators:</h4>
+              <ul>
+                <li>Catherine Sharp <img src="https://flagcdn.com/w20/gb.png"></li>
+                <li>Kat Dodd <img src="https://flagcdn.com/w20/ie.png"></li>
+                <li>Veronika Bártová <img src="https://flagcdn.com/w20/cz.png"></li>
+              </ul>
+              <button class="vote-btn" onclick="submitVote(3)">Vote</button>
+            </div>
+
+            <div class="card disabled" id="candidate-4">
+              <h2>George Kharaishvili <img src="https://flagcdn.com/w20/ge.png"></h2>
+              <p>There is a considerably developed fandom of Sci-Fi and Fantasy in Georgia, with dedicated publishing houses, board game clubs, attempts at producing high-quality literature, active translation projects and much more. However, this movement is more or less isolated from the European movements and processes.<br/><br/>
+              There are several reasons - one is an existing language barrier, not in simple, day-to-day communication, but in the complexities of translation. While Georgians try to keep up with modern SFF literature, it is extremely hard to have something translated from Georgian to English, especially since all governmental programs that supported such projects have shut down.<br/><br/>
+              Moreover, there is a current economic and political crisis in Georgia. Many members of the community are EU supporters and therefore, the protestors of current political trajectory of our illegitimate government. Considering how aggressively the local government tries to suppress such protest, a lot of members of the community either have hefty fines, or are trying to help others to pay them, or support currently jailed protestors in prison, etc.<br/><br/>
+              Therefore, even locations like Berlin are not affordable without fund support and hence, my participation fully depends on the availability of funding.<br/><br/>
+              Considering my experience and expertise in the relevant fields, I believe I can provide valuable insights during discussions or even present issues related to my background - that being writing, translating, reviewing, academic research, or DM-ing SFF related materials. I am very communicative and have experience of being active at book fairs or even giving lectures (also on these issues). But to me, my participation is more about finding and then strengthening a connection between communities. As a member of the Georgian community, I believe that there is a lot we can give, and a lot we can take, and now it all depends on the provided opportunities.</p>
+              <h4>Nominators:</h4>
+              <ul>
+                <li>Mariam Kvitsiani <img src="https://flagcdn.com/w20/ge.png"></li>
+                <li>Francesco Verso <img src="https://flagcdn.com/w20/it.png"></li>
+                <li>Elena Pavlova <img src="https://flagcdn.com/w20/bg.png"></li>
+              </ul>
+              <button class="vote-btn" onclick="submitVote(4)">Vote</button>
+            </div>
+
+            <div class="card disabled" id="candidate-5">
+              <h2>Jan Vaněk Jr. <img src="https://flagcdn.com/w20/cz.png"></h2>
+              <p>Who, I?<br/><br/>
+                Czech (rarely even proud), 1976 (so personal Golden Age coincided with Booming 90s), sercon(n?!)ish/bookish.<br/><br/>
+                Fan online/internationally since good old Usenet: edited ISFDB, Wikipedia when (they) still young, sent SFE corrections, commented @focal-point blogs, pilgrimaged to European Worldcons (sadly missed ’24, but miraculously made Seattle; also reinvigorated by Luxcon ’22), publish WOOFzine Newt News. Honestly, kinda failed @all. Yeah, also ran for TAFF, lost by record margin.<br/><br/>
+                Yet: 2022– expanded Fancyclopedia >150k words, many quite original/unique/revelatory, some commended. Still find immense, invigorating, useful fun. About the only editor (now) knowledgeable about European languages & topics.<br/><br/>
+                Other interests: translatology, Sorabistics, craft beer. More: Fancyclopedia.org/User:JVjr<br/><br/>
+                Why send me to Berlin?<br/><br/>
+                To great chagrin, know only elementary, tourist-survival German. (Will finish Duolingo by July, but experience says it helps little). Yet among formative reading Wer stiehlt schon Unterschenkel?, Andymon, Das Königsprojekt, “Ein paar… Szenen…” (sorry, Hahn, too many words), even some Jeschke; greatly respect Rottensteiner. Would love to see Erik Simon again, revisit AnotherCountry.de, meet Nuremberg team, thank SFCD/Recktenwald for earlier kindness…<br/><br/>
+                Why send to Berlin ME?<br/><br/>
+                Just 4 hours by scenic train, relatively cheap – can even pay myself, unlike other expens(iv)es –, EFF would save.<br/><br/>
+                Obviously, happy to contribute to program (topics should be obvious). Would do my best to improve at least contacts, if not relationships European – Czech fandom (however moribund). Will work on more Euro Fancy entries, even start rewriting SFE Czech one.<br/><br/>
+                As EFF admin: Should be clear now have unfortunate combination OCD, ADD, procrastination. Still, swear would manage. Also, improve transparency /website per best practices of Big Three.<br/><br/>
+                (Results-independent, ’course:) Anyone (not minding Fannish Splendour) ever in Prague, my couch(es) at your disposal.</p>
+              <h4>Nominators:</h4>
+              <ul>
+                <li>Zdeněk Rampas <img src="https://flagcdn.com/w20/cz.png"></li>
+                <li>Mark Plummer <img src="https://flagcdn.com/w20/gb.png"></li>
+                <li>Johan Anglemark <img src="https://flagcdn.com/w20/se.png"></li>
+              </ul>
+              <button class="vote-btn" onclick="submitVote(5)">Vote</button>
+            </div>
+
+          </div>
+
         </div>
     </section>
 
@@ -173,17 +281,18 @@
 <!--     <section id="register" class="register">
         <div class="container">
             <h2>Apply for EFF</h2>
-            <p class="section-desc">Complete the registration form and process the payment for your bond</p>
+            <p class="section-desc">Complete the registration form and process the payment for your bond</p> -->
             <!-- <div class="register-grid"> -->
-                <div class="payment-container">
+               <!-- <div class="payment-container">
                     <h3>Submit your bond</h3>
                     <div id="donate-button-container">
                       <div id="donate-button"></div>
-                      <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
                       <script>
                         PayPal.Donation.Button({
                         env:'production',
                         hosted_button_id:'627KTSATX9AZC',
+                        amount: "12.00",
+                        currency: "EUR",
                         image: {
                         src:'https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif',
                         alt:'Donate with PayPal button',
@@ -191,7 +300,7 @@
                         }
                         }).render('#donate-button');
                       </script>
-                    </div>
+                    </div> -->
                    <!--  <div id="donate-button-container">
                       <script async
                         src="https://js.stripe.com/v3/buy-button.js">
@@ -203,13 +312,13 @@
                       >
                       </stripe-buy-button>
                     </div> -->
-                </div>
+                <!-- </div>
                 <div class="form-container">
                     <h3>Registration Form</h3>
                     <iframe src="https://forms.gle/ScV348DwmzDz49by8" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-                </div>
+                </div> -->
             <!-- </div> -->
-        </div>
+       <!-- </div>
     </section> -->
 
         <!-- FAQ Section -->

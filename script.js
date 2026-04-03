@@ -90,6 +90,167 @@ document.querySelectorAll('.timeline-item').forEach(item => {
     observer.observe(item);
 });
 
+// Voting logic
+
+let transactionId = null, currencyCode = null, amount = null, email = null;
+let paymentStarted = false, voteProcessed = false;
+
+const SALT = "eff_2026";
+
+async function hash(input) {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(input);
+  const digest = await crypto.subtle.digest("SHA-256", data);
+  return Array.from(new Uint8Array(digest))
+    .map(b => b.toString(16).padStart(2, "0"))
+    .join("");
+}
+
+//TODO: this needs to be cycled through
+function enableVoting() {
+  document.getElementById('candidate-1').classList.remove('disabled');
+  document.getElementById('candidate-2').classList.remove('disabled');
+}
+
+window.onload = function () {
+
+  if (localStorage.getItem('canVote') === 'true') {
+    enableVoting();
+    transactionId = localStorage.getItem('tx');
+  }
+
+  if (localStorage.getItem('voted') === 'true') {
+    document.getElementById('cards').innerHTML =
+      "<h3 class='success'>✅ You already voted</h2>";
+  } else {
+    const params = new URLSearchParams(window.location.search);
+    const tx = params.get('tx');
+    const status = params.get('st');
+
+    if (tx && status === "Completed") {
+        donationDone({id: tx, amount: params.get('amt'), currency: params.get('cc')}, "return");
+    }
+  }
+};
+
+function donationDone(details, src) {
+    transactionId = details.id;
+      currencyCode = details.currency;
+      amount = details.amount;
+      email = details.email || "unknown";
+
+      localStorage.setItem('canVote', 'true');
+      localStorage.setItem('tx', transactionId);
+
+      enableVoting();
+
+      document.getElementById('status').innerText =
+        "✅ Payment successful! You can now vote.";
+}
+
+PayPal.Donation.Button({
+    env:'production',
+    hosted_button_id:'Y5RTH8TVW6JVG',
+    image: {
+        src:'button-nobg.png',
+        width: '150px',
+        alt:'Donate with PayPal button',
+        title:'Support the EFF and cast your vote',
+    },
+    amount: "3.00",
+    currency: "EUR",
+    enable_funding: ["card", "applepay", "googlepay"],
+    onClick: function() { paymentStarted = true; },
+    onApprove: function(details) { donationDone(details, "approved"); }
+}).render('#paypal-button');
+
+// paypal.Buttons({
+
+//   style: {
+//     layout: 'vertical',
+//     shape: 'pill',
+//     label: 'pay'
+//   }
+
+//   createOrder: function (data, actions) {
+//     return actions.order.create({
+//       purchase_units: [{
+//         description: "Support the EFF",
+//         amount: {
+//             currencyCode: "EUR",
+//             value: '3.00'
+//         }
+//       }],
+//       application_context: {
+//         shipping_preference: "NO_SHIPPING",
+//         user_action: "PAY_NOW"
+//       }
+//     });
+//   },
+
+//   onApprove: function (data, actions) {
+//     return actions.order.capture().then(function (details) {
+
+//       transactionId = details.id;
+//       currencyCode = details.purchase_units[0].payments.captures[0].amount.currency_code;
+//       amount = details.purchase_units[0].payments.captures[0].amount.value;
+//       email = details.payer.email_address || "unknown";
+
+//       localStorage.setItem('canVote', 'true');
+//       localStorage.setItem('tx', transactionId);
+
+//       enableVoting();
+
+//       document.getElementById('status').innerText =
+//         "✅ Payment successful! You can now vote.";
+//     });
+//   }
+
+// }).render('#paypal-button');
+
+async function submitVote(choice) {
+
+  if (localStorage.getItem('voted') === 'true') return;
+
+  const signature = await hash(transactionId + SALT);
+
+  fetch("https://script.google.com/macros/s/AKfycbzdbKeb-F0JlhYR4vkqlFdkak32pVvELGKcDaVV3DkTJ8jUjdbXgSTZEJgg0soyIYtq/exec", {
+    method: "POST",
+    body: JSON.stringify({
+      transactionId: transactionId,
+      currency: currencyCode,
+      amount: amount,
+      email: email,
+      vote: choice,
+      secret: SALT,
+      signature: signature
+    })
+  })
+  .then(res => res.text())
+  .then(res => {
+
+    if (res.includes("duplicate")) {
+      //alert("Vote already made.");
+        document.getElementById('status').innerText =
+         "✅ Vote already made.";
+      return;
+    }
+
+    localStorage.setItem('voted', 'true');
+
+    document.getElementById('cards').innerHTML =
+      "<h3 class='success'>🎉 Thanks for voting!</h3>";
+
+    document.getElementById('status').innerText =
+      "✅ Vote recorded successfully.";
+
+  })
+  .catch(() => {
+    document.getElementById('status').innerText =
+      "Error submitting vote.";
+  });
+}
+
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
