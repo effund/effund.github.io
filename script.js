@@ -95,6 +95,8 @@ document.querySelectorAll('.timeline-item').forEach(item => {
 let transactionId = null, currencyCode = null, amount = null, email = null;
 let paymentStarted = false, voteProcessed = false;
 
+const formContainer = document.getElementById('vote-form');
+
 const SALT = "eff_2026";
 
 async function hash(input) {
@@ -106,66 +108,80 @@ async function hash(input) {
     .join("");
 }
 
-//TODO: this needs to be cycled through
-function enableVoting() {
-  document.getElementById('candidate-1').classList.remove('disabled');
-  document.getElementById('candidate-2').classList.remove('disabled');
-  document.getElementById('candidate-3').classList.remove('disabled');
-  document.getElementById('candidate-4').classList.remove('disabled');
-  document.getElementById('candidate-5').classList.remove('disabled');
+function enableVoting(tx) {
+  // document.getElementById('candidate-1').classList.remove('disabled');
+  // document.getElementById('candidate-2').classList.remove('disabled');
+  // document.getElementById('candidate-3').classList.remove('disabled');
+  // document.getElementById('candidate-4').classList.remove('disabled');
+  // document.getElementById('candidate-5').classList.remove('disabled');
+
+  formContainer.innerHTML = `
+        <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSc-Dgz3Kq8_E7VJYM1Yfu7-ws-ltBy0JxLdnBqvQD98vbloWg/viewform?usp=pp_url&entry.1722688789=${tx}&embedded=true"
+            width="640"
+            height="800"
+            frameborder="0">
+        </iframe>`;
+
+  localStorage.setItem('voted', 'true');
 }
 
 window.onload = function () {
 
-  // if (localStorage.getItem('canVote') === 'true') {
-  //   enableVoting();
-  //   transactionId = localStorage.getItem('tx');
-  // }
+  if (localStorage.getItem('canVote') === 'true') {
+    enableVoting();
+    transactionId = localStorage.getItem('tx');
+  }
 
-  // if (localStorage.getItem('voted') === 'true') {
-  //   document.getElementById('cards').innerHTML =
-  //     "<h3 class='success'>✅ You already voted</h2>";
-  // } else {
-  //   const params = new URLSearchParams(window.location.search);
-  //   const tx = params.get('tx');
-  //   const status = params.get('st');
+  if (localStorage.getItem('voted') === 'true') {
+    document.getElementById('cards').innerHTML =
+      "<h3 class='success'>✅ You already voted</h2>";
+    formContainer.innerHTML = '';
+    document.getElementById('vote-donate').innerHTML =
+        "<h3 class='success'>✅ You already voted</h2>";
+  } else {
+    const params = new URLSearchParams(window.location.search);
+    const tx = params.get('tx');
+    const status = params.get('st');
 
-  //   if (tx && status === "Completed") {
-  //       donationDone({id: tx, amount: params.get('amt'), currency: params.get('cc')}, "return");
-  //   }
-  // }
+    if (tx && status === "Completed") {
+        donationDone({id: tx, amount: params.get('amt'), currency: params.get('cc')}, "return");
+    }
+  }
 };
 
 function donationDone(details, src) {
-    transactionId = details.tx;
-      currencyCode = details.cc;
-      amount = details.amt;
-      email = details.email || "unknown";
+      // transactionId = details.tx;
+      // currencyCode = details.cc;
+      // amount = details.amt;
+      // email = details.email || "unknown";
 
       localStorage.setItem('canVote', 'true');
       localStorage.setItem('tx', transactionId);
 
-      enableVoting();
+      if (localStorage.getItem('voted') === 'true') return;
 
       document.getElementById('status').innerText =
         "✅ Payment successful! You can now vote.";
+
+      enableVoting(details.tx);
 }
 
-// PayPal.Donation.Button({
-//     env:'production',
-//     hosted_button_id:'Y5RTH8TVW6JVG',
-//     image: {
-//         src:'button-nobg.png',
-//         width: '150px',
-//         alt:'Donate with PayPal button',
-//         title:'Support the EFF and cast your vote',
-//     },
-//     amount: "3.00",
-//     currency: "EUR",
-//     enable_funding: ["card", "applepay", "googlepay"],
-//     onClick: function() { paymentStarted = true; },
-//     onComplete: function(details) { donationDone(details, "approved"); }
-// }).render('#paypal-button');
+PayPal.Donation.Button({
+    env:'production',
+    hosted_button_id:'Y5RTH8TVW6JVG',
+    image: {
+        src:'button-nobg.png',
+        width: '150px',
+        alt:'Donate with PayPal button',
+        title:'Support the EFF and cast your vote',
+    },
+    amount: "3.00",
+    currency: "EUR",
+    enable_funding: ["card", "applepay", "googlepay"],
+    onClick: function() { paymentStarted = true; },
+    onComplete: function(details) { donationDone(details, "approved"); }
+}).render('#paypal-button');
 
 // paypal.Buttons({
 

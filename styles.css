@@ -121,7 +121,7 @@ a[disabled] {
         color: #4a4a4a;
     }
 
-    /*.desktop-nav a:first-of-type {
+    .desktop-nav a:first-of-type {
         background: green;
         padding: 2px 10px;
         border-radius: 10px;
@@ -131,7 +131,7 @@ a[disabled] {
 
     .desktop-nav a:first-of-type:hover {
         color: white;
-    }*/
+    }
 }
 
 
