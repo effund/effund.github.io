@@ -169,7 +169,7 @@ function donationDone(details, src) {
 
 PayPal.Donation.Button({
     env:'production',
-    hosted_button_id:'Y5RTH8TVW6JVG',
+    hosted_button_id:'LKBQWYWD6Z7CA',
     image: {
         src:'button-nobg.png',
         width: '150px',
