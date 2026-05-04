@@ -38,7 +38,6 @@ const timelineData = [
     {
         date: "April 2, 2026",
         title: "Voting Opens",
-        active: true,
         description: "Vote for your preferred applicant for the Fund. You will be able to read their presentation."
     },
     {
@@ -47,9 +46,15 @@ const timelineData = [
         description: "Voting closes and winner is shortly announced on the website and in groups."
     },
     {
+        date: "May 5, 2026",
+        title: "Winner announced",
+        active: true,
+        description: "The new EFF delegate is announced."
+    },
+    {
         date: "July 2, 2026",
         title: "Metropolcon/Eurocon 2026 begins in Berlin, Germany",
-        description: "The EFF delegate "
+        description: "The EFF delegate participates in the Eurocon."
     }
 ];
 
@@ -127,6 +132,9 @@ function enableVoting(tx) {
 }
 
 window.onload = function () {
+
+  //voting closed
+    return;
 
   if (localStorage.getItem('canVote') === 'true') {
     enableVoting();
